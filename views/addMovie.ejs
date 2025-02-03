@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* .logo{
+        display: flex;
+       align-items: center;
+       margin-left: 100px;
+    }
+    .logo1 input{
+        width: 500px;
+        margin-left: 30px;
+    }
+    .logo1 button{
+        margin-left: 20px;
+        padding: 5px 15px;
+        border-radius: 10px;
+
+    } */
+</style>
+<body>
+<%- include('header') %>
+    <!-- <header>
+        <div>
+            <div class="logo">
+                <img src="/images/logo.png"  width="100">
+                <form action="">
+                   <div style="display:flex ;" class="logo1"> 
+                    <input type="text" name="search" placeholder="Search for Movies, Events, Plays, Sports and Activities">
+                    <button>search</button>
+                   </div>
+                </form>
+                <button style="padding: 5px 15px; border-radius: 10px; margin-left:500px;">sign in</button>
+                
+            </div>
+        </div>
+    </header> 
+     -->
+
+    
+    <h1>add page</h1>
+
+
+    <a href="/viewMovie">view</a>
+    <form action="/insertMovie" method="post" enctype="multipart/form-data">
+        <table border="1">
+            <tr>
+                <td>select Language</td>
+                <td>
+                    <% var categoryArray=['Telugu' ,'Bengali',' Malayalam' ,' Hindi','Kannada', 'Tamil']; %>
+                    <select name="category" id="">
+                        <option value="">--select Language</option>
+    
+                        <% categoryArray.map((v,i)=>{ %>
+                            <option value="<%= v %>"><%= v %></option>
+                     <% }) %>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>enter rating</td>
+                <td><input type="number" name="rating" ></td>
+            </tr>
+            <tr>
+                <td>enter image</td>
+                <td><input type="file" name="Image" ></td>
+            </tr>
+            <tr>
+                <td>enter Movie name</td>
+                <td><input type="text" name="movieName" ></td>
+            </tr>
+          
+            <tr>
+                <td>movie type</td>
+                <td><input type="radio" name="movieTypes" value="Action">Action
+                    <input type="radio" name="movieTypes" value="Thriller"> Thriller</td>
+            </tr>
+            <tr>
+                <td>movie time</td>
+                <td><input type="time" name="movieTime"></td>
+            </tr>
+            <tr>
+                <td>relise Date</td>
+                <td><input type="date" name="movieDate"></td>
+            </tr>
+    
+            <tr>
+                <td></td>
+                <td><input type="submit"></td>
+            </tr>
+            
+        </table>
+    </form>
+</body>
+</html>
